@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    border: 0;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100px;
+    background-color: #424249;
+    display: flex;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.piggy {
+    width: 75px;
+    height: 75px;
+    align-self: center;
+}
+.header-text {
+    align-self: center;
+    font-size: 50px;
+    margin-left: 20px;
+    color: #fffdfc;
+    font-family: Righteous;
+   
+}
+.budget-total-text {
+    align-self: center;
+    color: #fffdfc;
+    margin-left: auto;
+    font-family: Roboto;
+}
+.monthly-expenses {
+    box-sizing: border-box;
+    width: 450px;
+    height: 150px;
+    background-color: tan;
+    margin-right: 50px;
+    /* margin-right: auto; */
+    /* margin-left: 75px;
+    margin-top: 75px; */
+}
+.add-bill {
+    box-sizing: border-box;
+    width: 400px;
+    height: 150px;
+    background-color: turquoise;
+    margin-left: 50px;
+}
+main {
+    box-sizing: border-box;
+    display: flex;
+    margin: 60px;
+}
+
+
+
+@font-face {
+    font-family: "Righteous";
+    src: url(../assets/Righteous/Righteous-Regular.ttf)
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(../assets/Roboto/Roboto-Thin.ttf);
+}
