@@ -34,28 +34,129 @@ header {
 }
 .monthly-expenses {
     box-sizing: border-box;
-    width: 450px;
-    height: 150px;
-    background-color: tan;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    width: 40%;
+    height: auto;
+    background-color: #efe8e1;
     margin-right: 50px;
-    /* margin-right: auto; */
-    /* margin-left: 75px;
-    margin-top: 75px; */
+    float: left;
+    border-radius: 5px;
+    min-height: 10vh;
+
 }
 .add-bill {
     box-sizing: border-box;
-    width: 400px;
-    height: 150px;
-    background-color: turquoise;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    width: 40%;
+    height: auto;
+    background-color: #54d2e5;
+    float: right;
     margin-left: 50px;
+    flex-flow: column;
+    flex-direction: column;
+    border-radius: 5px;
+
+
+
 }
 main {
     box-sizing: border-box;
-    display: flex;
     margin: 60px;
 }
+h3 {
+    font-family: "Righteous";
+    color: #424249;
+    font-size: 25px;
+}
+p {
+    font-family: "Roboto";
+}
+#name{
+    width: 100%;
+}
 
+#amount{
+    width: 100%;
+}
 
+label {
+    width: 30%;
+    font-family: "Roboto";
+    font-size: 20px;
+    color: #424249;
+    align-self:center;
+}
+button {
+    width: 100%;
+    height: 25%;
+    border-radius: 5px;
+    font-family: "Righteous";
+    font-size: 25px;
+    position: relative;
+    color: #fffdfc;
+    background-color: #424249;
+    cursor: pointer;
+}
+button:hover {
+    filter: brightness(150%);
+}
+button:active {
+    background: #e5e5e5;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+  }
+.name-input {
+    display: flex;
+    flex-flow: row;
+    padding-top: 5%;
+    
+
+}
+.amount-input {
+    display: flex;
+    flex-flow: row;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+input {
+    border-radius: 5px;
+    height: 30px;
+    font-size: 20px;
+    color: #424249;
+}
+.expense {
+    box-sizing: content-box;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 10px;
+    
+
+}
+p {
+    align-self: center;
+    font-family: "Roboto";
+    font-size: 20px;
+    color: #424249;
+}
+.p-name {
+    flex-grow: .25;
+    flex-basis: 0;
+}
+.p-expense {
+    margin-left: 20px;
+}
+.trash-can {
+    margin-left: auto;
+}
+.trash-can:hover {
+    filter: brightness(150%);
+}
 
 @font-face {
     font-family: "Righteous";
@@ -63,5 +164,5 @@ main {
 }
 @font-face {
     font-family: "Roboto";
-    src: url(../assets/Roboto/Roboto-Thin.ttf);
+    src: url(../assets/Roboto/Roboto-Regular.ttf);
 }

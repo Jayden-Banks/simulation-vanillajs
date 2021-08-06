@@ -1,11 +1,9 @@
-
-
 let bills = []
 const baseURL = `http://localhost:4000/api/bills`
+
 const clearList = _ => {
     let query = document.querySelector('section')
     query.innerHTML = ''
-
 }
 
 const displayList = _ => {
@@ -13,10 +11,11 @@ const displayList = _ => {
     axios.get(baseURL).then(res => {
         bills = res.data
     })
+    .catch(err => console.log(err))
 
     bills.forEach(el => {
         const billsCard = document.createElement('div')
-        billsCard.innerHTML = `<div><p> ${el.name} $${el.expense}<p><input class="trash-can" type="image" src="../assets/trash_can.svg" value="${el.id}"/></div>`
+        billsCard.innerHTML = `<div class ="expense"><p class="p-name"> ${el.name}</p><p class="p-expense">$${el.expense}</p><input class="trash-can" type="image" src="../assets/trash_can.svg" value="${el.id}"/></div>`
         document.querySelector('section').appendChild(billsCard)
 
     })
@@ -40,6 +39,7 @@ const addToList = e => {
         bills = res.data
         displayList()    
     })
+    .catch(err => console.log(err))
 }
 
 const deleteFromList = e => {
@@ -50,20 +50,22 @@ const deleteFromList = e => {
         e.target.parentNode.remove()
         displayList()
     })
+    .catch(err => console.log(err))
 }
 
 const calcTotal = _ => {
     axios.get(baseURL).then(res => {
-        console.log(res.data)
         if(res.data[0]) {
-            console.log(res.data[0].expense)
-        let total = res.data.reduce((ac, el) => {
-            return ac + +el.expense}, 0)
-        console.log(total)
-        //console.log(billArr)
-        //console.log('This is the total', total)
-    }})
+            let total = res.data.reduce((ac, el) => {
+                return ac + +el.expense}, 0)
 
+            document.querySelector('h2').textContent = `Budget Total: $${total}`
+        } else {
+        document.querySelector('h2').textContent = `Budget Total: $0`
+            
+        }
+    })
+    .catch(err => console.log(err))
 }
 
 displayList()
